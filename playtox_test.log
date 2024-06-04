@@ -1,0 +1,45 @@
+2024-06-04 18:58:30 INFO  HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-04 18:58:30 INFO  HHH000026: Second-level cache disabled
+2024-06-04 18:58:30 WARN  HHH10001002: Using built-in connection pool (not intended for production use)
+2024-06-04 18:58:30 INFO  HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2024-06-04 18:58:30 INFO  HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/playtox_db]
+2024-06-04 18:58:30 INFO  HHH10001001: Connection properties: {password=****, user=playtox_app}
+2024-06-04 18:58:30 INFO  HHH10001003: Autocommit mode: false
+2024-06-04 18:58:30 INFO  HHH10001115: Connection pool size: 20 (min=1)
+2024-06-04 18:58:31 INFO  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-04 18:58:31 INFO  Flyway Community Edition 8.0.5 by Redgate
+2024-06-04 18:58:31 INFO  Database: jdbc:postgresql://localhost:5432/playtox_db (PostgreSQL 16.2)
+2024-06-04 18:58:31 WARN  Flyway upgrade recommended: PostgreSQL 16.2 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2024-06-04 18:58:31 INFO  Successfully validated 1 migration (execution time 00:00.010s)
+2024-06-04 18:58:31 INFO  Current version of schema "public": 20240604165242
+2024-06-04 18:58:31 INFO  Schema "public" is up to date. No migration necessary.
+2024-06-04 18:58:32 INFO  Thread "Thread-6" : from account "d18f87cb-c8aa-4ac6-b337-b55a580547a6": (10000-3347=6653) to account "98251e42-7fd7-4964-b7bf-52e41ce4d168": (10000+3347=13347)
+2024-06-04 18:58:32 INFO  Thread "Thread-10" : from account "c72a33d4-9d46-4924-8e37-1036ba8e0e59": (10000-8825=1175) to account "a4a6990c-5b7e-4bfd-b839-b54be2c2332e": (10000+8825=18825)
+2024-06-04 18:58:32 INFO  Thread "Thread-8" : from account "fb344770-34ad-49b9-9531-3cf3039d7db4": (10000-7246=2754) to account "6f00910d-fcce-4347-9345-c76e284e6cc5": (10000+7246=17246)
+2024-06-04 18:58:32 INFO  Thread "Thread-9" : from account "db1ee687-a0b8-4a13-87a6-843c1f8cde20": (10000-2680=7320) to account "dd6d95c2-2474-4628-906e-692afaf891dc": (10000+2680=12680)
+2024-06-04 18:58:32 INFO  Thread "Thread-3" : from account "4af37190-74c3-46ba-9d8d-bfd8c3d13678": (10000-2147=7853) to account "f21c2748-9260-4ee8-bc37-851c1ffbe67a": (10000+2147=12147)
+2024-06-04 18:58:32 INFO  Thread "Thread-7" : from account "2978c292-7254-42d6-b9b6-50cb083abc79": (10000-7797=2203) to account "faf400dd-d937-4da6-8621-28d5c641c48f": (10000+7797=17797)
+2024-06-04 18:58:32 INFO  Thread "Thread-1" : from account "6144ded2-cac5-46c2-909b-a00eba800694": (10000-3673=6327) to account "06bc5c9e-3d10-4ef6-b551-29e849acd47b": (10000+3673=13673)
+2024-06-04 18:58:32 INFO  Thread "Thread-2" : from account "320a4bc2-17b9-4ee5-af02-97ae5910753f": (10000-7465=2535) to account "51236580-c7d6-46a3-bbe8-b5e28463b63e": (10000+7465=17465)
+2024-06-04 18:58:32 INFO  Thread "Thread-5" : from account "6a09def7-401c-48fd-b360-b3f10b6fb887": (10000-1802=8198) to account "347fd582-7f44-432a-b2b0-66ea2ba6df64": (10000+1802=11802)
+2024-06-04 18:58:33 INFO  Thread "Thread-4" : from account "9f8dffc8-2604-4724-a39c-9579e43a4385": (10000-5902=4098) to account "084c9a9b-3f7a-4e83-8fe2-afeb628447bc": (10000+5902=15902)
+2024-06-04 18:58:33 INFO  Thread "Thread-6" : from account "c87e37ab-e3e8-431c-b3da-2259d357c14c": (10000-8716=1284) to account "51236580-c7d6-46a3-bbe8-b5e28463b63e": (17465+8716=26181)
+2024-06-04 18:58:33 INFO  Thread "Thread-1" : from account "572c72f3-a1d2-492a-a2d0-593a5a30a256": (10000-4597=5403) to account "4af37190-74c3-46ba-9d8d-bfd8c3d13678": (7853+4597=12450)
+2024-06-04 18:58:33 INFO  Thread "Thread-8" : from account "806592ec-bd21-4742-b98e-dc64c16499a7": (10000-9909=91) to account "76ad0cb0-5e1c-43ff-9622-f193af706ac5": (10000+9909=19909)
+2024-06-04 18:58:34 INFO  Thread "Thread-9" : from account "a19b31a2-8450-423e-a54c-a7f6eb8d5299": (10000-7725=2275) to account "c87e37ab-e3e8-431c-b3da-2259d357c14c": (1284+7725=9009)
+2024-06-04 18:58:34 INFO  Thread "Thread-7" : from account "8f3060bf-eee9-4b53-9352-f2ca2b6fcaae": (10000-9539=461) to account "347fd582-7f44-432a-b2b0-66ea2ba6df64": (11802+9539=21341)
+2024-06-04 18:58:34 INFO  Thread "Thread-3" : from account "b9e2a70a-26a4-4aba-81cb-fe7c64ab4cee": (10000-8065=1935) to account "4d662704-f54f-4645-9808-59c761fa3c99": (10000+8065=18065)
+2024-06-04 18:58:34 INFO  Thread "Thread-10" : from account "4af37190-74c3-46ba-9d8d-bfd8c3d13678": (12450-11911=539) to account "77a858a0-21ba-478c-b0a6-0fb4a296d951": (10000+11911=21911)
+2024-06-04 18:58:34 INFO  Thread "Thread-2" : from account "db1ee687-a0b8-4a13-87a6-843c1f8cde20": (7320-4856=2464) to account "962d935d-6d3a-49cd-bff0-f8d3b5f5c593": (10000+4856=14856)
+2024-06-04 18:58:34 INFO  Thread "Thread-4" : from account "74e2fcd3-e436-472f-8cc2-99c855f90101": (10000-1941=8059) to account "c87e37ab-e3e8-431c-b3da-2259d357c14c": (9009+1941=10950)
+2024-06-04 18:58:34 INFO  Thread "Thread-5" : from account "76ad0cb0-5e1c-43ff-9622-f193af706ac5": (19909-3513=16396) to account "320a4bc2-17b9-4ee5-af02-97ae5910753f": (2535+3513=6048)
+2024-06-04 18:58:35 INFO  Thread "Thread-3" : from account "74e2fcd3-e436-472f-8cc2-99c855f90101": (8059-6783=1276) to account "6f00910d-fcce-4347-9345-c76e284e6cc5": (17246+6783=24029)
+2024-06-04 18:58:35 INFO  Thread "Thread-6" : from account "659392d9-d2df-4dcf-b5cd-2094c42dcb48": (10000-7981=2019) to account "572c72f3-a1d2-492a-a2d0-593a5a30a256": (5403+7981=13384)
+2024-06-04 18:58:35 INFO  Thread "Thread-10" : from account "fd7f6dcf-c300-4c15-b589-971eaaef1bde": (10000-2064=7936) to account "ea0af86d-7365-4a9a-badf-1bf31fb1e361": (10000+2064=12064)
+2024-06-04 18:58:35 INFO  Thread "Thread-1" : from account "6804e165-1b22-445b-a184-9a9f15c9d5c4": (10000-3470=6530) to account "46a465b9-9b69-4064-8752-40825a20cba6": (10000+3470=13470)
+2024-06-04 18:58:35 INFO  Thread "Thread-7" : from account "ff1ae21b-956d-416a-97e2-9b65b53c17ec": (10000-1598=8402) to account "6144ded2-cac5-46c2-909b-a00eba800694": (6327+1598=7925)
+2024-06-04 18:58:35 INFO  Thread "Thread-8" : from account "d18f87cb-c8aa-4ac6-b337-b55a580547a6": (6653-2835=3818) to account "c72a33d4-9d46-4924-8e37-1036ba8e0e59": (1175+2835=4010)
+2024-06-04 18:58:35 INFO  Thread "Thread-9" : from account "a4a6990c-5b7e-4bfd-b839-b54be2c2332e": (18825-4827=13998) to account "9238eb56-cb1f-46e4-b668-fc621fea9333": (10000+4827=14827)
+2024-06-04 18:58:35 INFO  Thread "Thread-2" : from account "6f00910d-fcce-4347-9345-c76e284e6cc5": (24029-7483=16546) to account "06bc5c9e-3d10-4ef6-b551-29e849acd47b": (13673+7483=21156)
+2024-06-04 18:58:36 INFO  Thread "Thread-5" : from account "4247e3ba-a115-4579-b293-2264d67b5bf5": (10000-4522=5478) to account "ea0af86d-7365-4a9a-badf-1bf31fb1e361": (12064+4522=16586)
+2024-06-04 18:58:36 INFO  Thread "Thread-4" : from account "6812a96a-8010-40bf-a9e8-09319dda3419": (10000-1892=8108) to account "347fd582-7f44-432a-b2b0-66ea2ba6df64": (21341+1892=23233)
