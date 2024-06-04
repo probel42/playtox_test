@@ -35,7 +35,6 @@ public class PlaytoxTest {
 
 	static {
 		factory = new Configuration()
-				.setInterceptor(new LoggingInterceptor())
 				.addAnnotatedClass(Account.class)
 				.configure().buildSessionFactory();
 	}
