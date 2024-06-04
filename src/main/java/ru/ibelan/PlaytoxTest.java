@@ -63,7 +63,7 @@ public class PlaytoxTest {
 				.load()
 				.migrate();
 
-		try (Session session = factory.openSession()) {
+		wrapInSession(session -> {
 			Transaction tx = session.beginTransaction();
 			for (int i = 0; i < ACCOUNTS_NUMBER; i++) {
 				Account account = new Account();
@@ -72,15 +72,15 @@ public class PlaytoxTest {
 				session.persist(account);
 			}
 			tx.commit();
-		} catch (Exception ex) {
-			log.warn(ex.getMessage());
-		}
+		});
 	}
 
 	static class TransferTask implements Runnable {
 		private static final AtomicInteger counter = new AtomicInteger(TRANSACTIONS_NUMBER);
 
 		// проще всего заблокировать через for update и skip locked нативным postgres, но тогда будет завязка на postgres
+		// todo по-хорошему тут надо подумать над другим решением, т.к. ORDER BY random() это не очень хорошая практика,
+		//  из-за того что сортировка внутри РСУБД получит нетранзитивный компаратор
 		private static final String queryFrom = "SELECT * FROM account a WHERE money > 0 ORDER BY random() LIMIT 1 FOR UPDATE SKIP LOCKED";
 		private static final String queryTo = "SELECT * FROM account a WHERE id <> :exceptId ORDER BY random() LIMIT 1 FOR UPDATE SKIP LOCKED";
 
