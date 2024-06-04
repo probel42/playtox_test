@@ -6,7 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.query.NativeQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.ibelan.model.Account;
@@ -50,25 +49,17 @@ public class PlaytoxTest {
 	}
 
 	public static void main(String[] args) {
-		log.info("started");
 		init();
 
 		for (int i = 0; i < THREADS_NUMBER; i++) {
 			threadPool.add(new Thread(new TransferTask()));
 		}
 		threadPool.forEach(Thread::start);
-
-		try {
-			for (Thread thread : threadPool) {
-				thread.join();
-			}
-		} catch (InterruptedException ignored) {
-		}
 	}
 
 	private static void init() {
 		Flyway.configure()
-				.dataSource( "jdbc:postgresql://postgres:5432/playtox_db" , "playtox_app" , "playtox" )
+				.dataSource( "jdbc:postgresql://localhost:5432/playtox_db" , "playtox_app" , "playtox" )
 				.locations("classpath:db/migrations")
 				.load()
 				.migrate();
@@ -90,7 +81,7 @@ public class PlaytoxTest {
 	static class TransferTask implements Runnable {
 		private static final AtomicInteger counter = new AtomicInteger(TRANSACTIONS_NUMBER);
 
-		// проще всего заблокировать через skip locked нативным postgres, но тогда будет завязка на postgres
+		// проще всего заблокировать через for update и skip locked нативным postgres, но тогда будет завязка на postgres
 		private static final String queryFrom = "SELECT * FROM account a WHERE money > 0 ORDER BY random() LIMIT 1 FOR UPDATE SKIP LOCKED";
 		private static final String queryTo = "SELECT * FROM account a WHERE id <> :exceptId ORDER BY random() LIMIT 1 FOR UPDATE SKIP LOCKED";
 
@@ -131,10 +122,11 @@ public class PlaytoxTest {
 							toAccount.getMoney() + money);
 					fromAccount.setMoney(fromAccount.getMoney() - money);
 					toAccount.setMoney(toAccount.getMoney() + money);
+					tx.commit();
 				} catch (NoResultException noResultException) {
+					tx.rollback();
 					log.warn("can't find account for transfer"); // todo в ТЗ нет описания что делать в таких ситуациях
 				}
-				tx.commit();
 			});
 		}
 	}
